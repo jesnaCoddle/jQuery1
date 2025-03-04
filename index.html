@@ -20,6 +20,10 @@
             cursor: pointer;
             padding: 10px;
         }
+
+        p span {
+            display: none;
+        }
     </style>
 </head>
 
@@ -42,27 +46,51 @@
         <li>Item 3</li>
     </ul>
 
-    <p id="dblclick"> Double Click this para : Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maiores temporibus impedit nobis quam quas tenetur facilis placeat deleniti ullam! Nihil eaque eligendi autem ducimus,optio id quam aut laudantium.</p>
+    <p id="dblclick"> Double Click this para : Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maiores
+        temporibus impedit nobis quam quas tenetur facilis placeat deleniti ullam! Nihil eaque eligendi autem
+        ducimus,optio id quam aut laudantium.</p>
 
-    <p id="p5">Click to change font family :Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores maxime dicta doloribus minussoluta amet! </p>
+    <p id="p5">Click to change font family :Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores
+        maxime dicta doloribus minussoluta amet! </p>
+    <br>
+    <p class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reprehenderit debitis iusto quos
+        quisquam, labore nemo recusandae molestias vitae accusantium hic perferendis dignissimos nulla incidunt
+        dicta asperiores?<span>Sunt, ducimus dignissimos.</span> </p>
     <br>
     <div>
         <p>First Child Selector</p>
         <p>jQuery</p>
     </div>
     <br>
+    <ul id="list">
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+
+    <input type="button" value="Button 1">
+    <input type="submit" value="submit">
+    <input type="text">
+
+    <a href="http://google.com">Google</a>
+    <a href="http://yahoo.com">Yahoo</a>
+
+    <br>
     <h3 class="attr">this is class attribute example</h3>
     <br>
     <button id="colorButton">Change Background Color</button>
-    <br><br>
+    
 
     <button id="hideButton"> Hide Paragraph</button>
-    <br><br>
+    
 
     <button id="togglebtn">Toggle</button>
-    <br><br>
+    
     <button id="colorBtn">click here to change paragragh style</button>
-    <br><br>
+    
     <div id="ClickDiv">Click me to display image</div>
     <br>
     <img id="image" src="panda.jpg" alt="panda">
@@ -125,6 +153,15 @@
             $("#ClickDiv").click(function () {
                 $("#image").toggle();
             });
+            $('span').show(5000).css('color', 'red');
+            $('ul#list li:first').css('color', 'red');
+            $('ul#list li:last').css('color', 'yellow');
+            $('ul#list li:even').css('background-color', 'lightblue');
+            $('ul#list li:odd').css('background-color', 'lightpink');
+            $('ul#list li:nth-child(1n)').css('list-style', 'none');
+            $(':submit').hide();
+            $('[href]').css('color', 'red');
+            $('a[href="http://yahoo.com"]').css('text-decoration', 'none');
         });
     </script>
 </body>

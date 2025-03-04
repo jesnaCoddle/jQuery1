@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    #image {
+        display: none;
+        width: 300px;
+    }
+
+    #ClickDiv {
+        border: 1px solid black;
+        width: 200px;
+        text-align: center;
+        background-color: lightblue;
+        cursor: pointer;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <h2 style="display: none; text-align: center;">jQuery</h2>
+
+    <p id="p1">
+        In this paragraph we are changing background.
+    </p>
+    <p id="p2">
+        In 2nd paragraph we are going hide this para.
+    </p>
+    <p class="p3">Click this paragraph with class</p>
+    <p class="p4">In 4th paragraph we are going toggle this para.</p>
+    <div id="myDiv">Hover me</div>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <p id="dblclick"> Double Click this para : Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maiores
+        temporibus impedit nobis quam quas tenetur facilis placeat deleniti ullam! Nihil eaque eligendi autem ducimus,
+        optio id quam aut laudantium.</p>
+
+    <p id="p5">Click to change font family :Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur dolores
+        maxime dicta doloribus minussoluta amet! </p>
+    <br>
+    <div>
+        <p>First Child Selector</p>
+        <p>jQuery</p>
+    </div>
+    <br>
+    <h3 class="attr">this is class attribute example</h3>
+    <br>
+    <button id="colorButton">Change Background Color</button>
+    <br><br>
+
+    <button id="hideButton"> Hide Paragraph</button>
+    <br><br>
+
+    <button id="togglebtn">Toggle</button>
+    <br><br>
+    <button id="colorBtn">click here to change paragragh style</button>
+    <br><br>
+    <div id="ClickDiv">Click me to display image</div>
+    <br>
+    <img id="image" src="panda.jpg" alt="panda">
+
+    <script>
+        $(document).ready(function () {
+            $("h2:hidden").show(3000).css({
+                "background-color": "skyblue",
+                "color": "white",
+            });
+            $("#colorButton").click(function () {
+                $("#p1").css("background-color", "skyblue");
+            });
+
+            $("#hideButton").click(function () {
+                $("#p2").hide();
+            });
+
+            $(".p3").click(function () {
+                alert("Paragraph with class clicked!");
+            });
+
+            $("#togglebtn").click(function () {
+                $(".p4").toggle();
+            });
+
+            $("#myDiv").mouseenter(function () {
+                $(this).css("background-color", "yellow");
+            }).mouseleave(function () {
+                $(this).css("background-color", "white");
+            });
+            $("#dblclick").dblclick(function () {
+                $(this).css("font-style", "italic");
+            });
+            $("ul li:first").click(function () {
+                $(this).css("font-size", "32px");
+            });
+            $("li:last").click(function () {
+                $(this).css({
+                    "text-decoration": "line-through",
+                    "background-color": "lightgreen"
+                });
+            });
+            $("#p5").click(function () {
+                $(this).css("font-family", "Cursive");
+            })
+            $("#colorBtn").click(function () {
+                $("p").css({
+                    "background-color": "skyblue",
+                    "font-size": "25px",
+                    "color": "white",
+                    "padding": "10px"
+                });
+            });
+            $("p:first-child").css(
+                "background-color", "violet");
+            $("[class]").css("color",
+                "green");
+
+            $("#ClickDiv").click(function () {
+                $("#image").toggle();
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
